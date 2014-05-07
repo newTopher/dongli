@@ -8,7 +8,7 @@ class LoginController extends Controller {
             $password = I('post.password');
             $userModel = M('User');
             $data = $userModel->where(array('name'=>$name))->find();
-            print_r($data);exit;
+            if($data)
         }else{
             $this->display();
         }

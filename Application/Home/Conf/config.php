@@ -10,4 +10,5 @@ return array(
 	'DB_USER'=>'root',
 	'DB_PWD'=>'wapwei!@#$%09876',
 	'DB_PREFIX'=>'p_',
+    'MODULE_ALLOW_LIST'    =>    array('Home'),
 );
