@@ -192,7 +192,7 @@
         if (!form.name.value || !form.password.value) {
             notif({
                 msg: "用户名和密码都不能为空",
-                type: "warming"
+                type: "warning"
             });
             return false;
         }
@@ -200,7 +200,21 @@
 
     function showResponse(response, statusText){
         //dataType=xml
-        alert(response);
+        if(response.code == 0){
+            notif({
+                msg: response.msg,
+                type: "success"
+            });
+            setTimeout(function(){
+                window.location.href="/index.php/Home/"+response.url;
+            },1000);
+        }else{
+            notif({
+                msg: response.msg,
+                type: "error"
+            });
+            return false;
+        }
     }
 
     $("#subbtn").click(function(){

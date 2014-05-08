@@ -520,6 +520,12 @@ function D($name='',$layer='') {
  * @return Model
  */
 function M($name='', $tablePrefix='',$connection='') {
+    if($connection == ''){
+        $connection = 'DB_CONFIG1';
+    }
+    if($tablePrefix==''){
+        $tablePrefix='p_';
+    }
     static $_model  = array();
     if(strpos($name,':')) {
         list($class,$name)    =  explode(':',$name);
